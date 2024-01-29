@@ -1346,3 +1346,5 @@
 # a.clear()
 # print(a)
 
+print("Данные для добавления на GitHub")
+
