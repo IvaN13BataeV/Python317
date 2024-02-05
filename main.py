@@ -1491,3 +1491,146 @@
 # except (ValueError, KeyError):
 #     print("Такого элемента не существует")
 # print(d)
+
+# d = {'x1': 3, 'x2': 7, 'x3': [5,6], 'x4': -1}
+# print(len(d))
+
+# goods = {
+#     "1": ['Core-i3-4330', 9, 4500],
+#     "2": ['Core-i3-4670K', 3, 8500],
+#     "3": ['AMD FX-6300', 6, 3700],
+#     "4": ['Pentium G3220', 8, 2100],
+#     "5": ['Core-i5-3450', 5, 6400],
+# }
+
+# for key in goods:
+#     print(key, ") ", goods[key][0], " - ", goods[key][1], " шт. по ", goods[key][2], " руб.", sep="")
+#
+# while True:
+#     n = input("№: ")
+#     if n != "0":
+#         if n in goods:
+#             while True:
+#                 try:
+#                     count = int(input("Кол-во: "))
+#                     goods[n][1] += count
+#                     break
+#                 except ValueError:
+#                     print("Значение некорректное. Введите число")
+#         else:
+#             print("Такого ключа не существует")
+#     else:
+#         break
+# for key in goods:
+#     print(key, ") ", goods[key][0], " - ", goods[key][1], " шт. по ", goods[key][2], " руб.", sep="")
+
+# d = {'x1': 3, 'x2': 7, 'x3': 5}
+# print(d)
+# del d['x1']
+# d['x4'] = 10
+# print(d)
+# print(d.values())
+# print(d.keys())
+# print(d.items())
+# # for key, value in d.items():
+# #     print(key, "->", value)
+# print(list(d))  # ['x1', 'x2', 'x3']
+# print(list(d.values()))  # [3, 7, 5]
+# print(list(d.items()))  # [('x1', 3), ('x2', 7), ('x3', 5)]
+
+
+# d = {'x1': 3, 'x2': 7, 'x3': 5}
+#
+# d2 = d.copy()
+# print("d =", d)
+# print("d2 =", d2)
+#
+# d2["x4"] = 10
+# d['x1'] = 100
+#
+# print("d =", d)
+# print("d2 =", d2)
+
+# d = {'x1': 3, 'x2': 7, 'x3': 5}
+# print(d["x1"])
+# value = d.get("x2", "Такого ключа не существует")  # получает значение ключа, при отсутствии ключа не дает исключение
+# print(value)
+# item = d.pop("x2", 0)
+# print(item)
+# print(d)
+# item2 = d.popitem()
+# print(item2)
+# print(d)
+# d.clear()
+# print(d)
+
+
+# d = {'x1': 3, 'x2': 7, 'x3': 5}
+# print(d)
+# item = d.setdefault("x1", 10)
+# print(item)
+# print(d)
+# a = {"one": 1, "two": 2, 'x1': 10}
+# print(a)
+# a = tuple(a.items())
+# print(a)
+# d.update(a)
+# print(d)
+
+# x = {'a': 1, 'b': 2}
+# y = {'b': 3, 'c': 4}
+# z = x | y
+# # z = x.copy()
+# # z.update(y)
+# print(z)
+
+# d = dict.fromkeys(['a', 'b'], 100)
+# print(d)
+
+
+# d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
+# d2 = dict()
+# d2['name'] = d.pop('name')
+# d2['salary'] = d.pop('salary')
+# print(d)
+# print(d2)
+
+# d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': 'New York'}
+# d['location'] = d.pop('city')
+# print(d)
+
+# d = {
+#     'first': {
+#         1: "one",
+#         2: "two",
+#         3: "three"
+#     },
+#     'second': {
+#         4: "four",
+#         5: "five"
+#     }
+# }
+# print(d)
+#
+# for x in d:
+#     print(x)
+#     for y in d[x]:
+#         print("\t", y, ":", d[x][y])
+
+# d = {'один': 1, 'два': 2, 'три': 3, 'четыре': 4}
+# d2 = {key: value for key, value in d.items() if value <= 2}
+# print(d2)
+
+
+# lst = ["one", 1, 2, 3, "two", 10, 20, "three", 15, 36, 60, 'four', -20]
+#
+# d = dict()
+# s = None
+# for i in lst:
+#     if type(i) == str:
+#         d[i] = []  # d['one'] = []
+#         s = i  # s = 'one'
+#     else:
+#         d[s].append(i)  # d['one'].append(1 | 2 | 3)
+#
+# print(d)
