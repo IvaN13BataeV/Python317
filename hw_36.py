@@ -3,13 +3,11 @@ s = 0  # создаем глобальную переменную общей п�
 
 
 def parallelepiped_area(a, b, c):
+    def rectangle_area(side1, side2):
+        return side1 * side2
+
     global s  # объявляем глобальной переменной
-    s = 2 * (a * b + a * c + b * c)
-
-    def rectangle_area():
-        s = a * b
-
-    rectangle_area()  # функция пропускается
+    s = 2 * (rectangle_area(a, b) + rectangle_area(a, c) + rectangle_area(b, c))
     return s
 
 
@@ -23,16 +21,13 @@ print()
 
 
 def parallelepiped_area(a, b, c):
-    s = 2 * (a * b + a * c + b * c)
+    def rectangle_area(side1, side2):
+        return side1 * side2
 
-    def top_rectangle_area():
-        nonlocal s  # площадь верхнего прямоугольника объявляем нелокальной
-        s = a * b
-
-    top_rectangle_area()
+    s = 2 * (rectangle_area(a, b) + rectangle_area(a, c) + rectangle_area(b, c))
     return s
 
 
-print(parallelepiped_area(2, 4, 6))  # выводится из функции площадь верхнего прямоугольника
+print(parallelepiped_area(2, 4, 6))
 print(parallelepiped_area(5, 8, 2))
 print(parallelepiped_area(1, 6, 8))
