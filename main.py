@@ -1366,9 +1366,9 @@
 
 # a = {0, 1, 2, 3}
 # b = {4, 3, 2, 1}
-# c = a | b  # объединение множеств в другое
-# c = a & b  # пересечение множеств в другом
-# c = a - b  # разница множеств в другом
+# c = a | b # объединение множеств в другое
+# c = a & b # пересечение множеств в другом
+# c = a - b # разница множеств в другом
 # c = a ^ b
 # c = a.union(b)
 # print(c)
@@ -1813,11 +1813,11 @@
 # func()  # 5
 
 
-# x =10  # 3 уровень приоритета
+# x =10 # 3 уровень приоритета
 
 
 # def func(a):
-#     x = 2  #  2 уровень приоритета
+#     x = 2  # 2 уровень приоритета
 
 #     def inner():
 #         x = 6  #  самый высокий приоритет
@@ -2398,3 +2398,178 @@
 # file_name = "data.txt"
 # print(fr"home\{dir_name}\{file_name}")
 # print("home\\" + dir_name + "\\" + file_name)
+
+# s = '''
+# Несколько
+# строк
+# '''
+# print(s)
+#
+# s1 = """
+# Несколько
+# строк
+# """
+# print(s1)
+#
+# s2 = "Несколько строк"
+# print(s2)
+
+# def square(n):
+#     """Принимает число n, возвращает квадрат числа n."""
+#     return n ** 2
+#
+#
+# print(square(5))
+# print(square.__doc__)
+
+# from math import pi
+#
+#
+# def cylinder(r, h):
+#     """
+#     Вычисляет площадь цилиндра.
+#
+#     Вычисляет площадь цилиндра на основании заданной высоты и радиуса основания.
+#
+#     :param r: положительное число, радиус основания цилиндра
+#     :param h: положительное число, высота цилиндра
+#     :return: положительное число, площадь цилиндра
+#     """
+#     return 2 * pi * r * (r + h)
+#
+#
+# print(cylinder(2, 4))
+# print(cylinder.__doc__)
+# print(max.__doc__)
+# print(list.__doc__)
+
+# print(ord('a'))
+# print(ord('#'))
+# print(ord('й'))
+
+# while True:
+#     n = input("-> ")
+#     if n != "-1":
+#         print(ord(n))
+#     else:
+#         break
+
+# s = "Test string for met"
+# arr = [ord(x) for x in s]
+# print("ASCII коды:", arr)
+# arr = [sum(arr) // len(arr)] + arr  # ср. арифм. впереди списка
+# print(arr)
+# arr += [ord(x) for x in input("-> ")[:3] if ord(x) not in arr]
+# print(arr)
+# print(f"Количество последних элементов: {arr.count(arr[-1]) - 1}")
+# arr.sort(reverse=True)
+# print(arr)
+
+# print(chr(97))
+# print(chr(8364))
+
+# a = 97
+# b = 122
+#
+# if a < b:
+#     a, b = b, a
+#
+# for i in range(b, a + 1):
+#     print(chr(i), end=" ")
+
+# print("apple" == "Apple")
+# print("apple" > "Apple")  # 97 > 65
+
+
+# from random import randint
+#
+# shortest = 7
+# longest = 10
+# min_ascii = 33
+# max_ascii = 126
+#
+#
+# def random_password():
+#     res = ""
+#     for i in range(randint(shortest, longest)):  # range(10)
+#         rand_char = chr(randint(min_ascii, max_ascii))
+#         res += rand_char
+#     return res
+#
+#
+# print("Ваш случайный пароль:", random_password())
+
+
+# s = "hello, WORLD! I am learning Python."
+# print(s.capitalize())  # Hello, world! i am learning python.
+# print(s.lower())  # hello, world! i am learning python.
+# print(s.upper())  # HELLO, WORLD! I AM LEARNING PYTHON.
+# print(s.swapcase())  # HELLO, world! i AM LEARNING pYTHON.
+# print(s.title())  # Hello, World! I Am Learning Python.
+
+# print(s.count("l"))
+# print(s.count("l", 3))
+# print(s.count("l", 3, 10))
+
+# print(s.find("Python"))  # возвращает первое вхождение подстроки в строку, если такой нет - возвращает -1
+# print(s.find("l", 4, 20))
+# print(s.find("l"))
+# print(s.rfind("l"))
+#
+# print(s.index("l"))  # ValueError
+# print(s.rindex("l"))
+
+
+# st = input("Введите два слова через пробел: ")
+# first = st[:st.find(" ")]
+# second = st[st.find(" ") + 1:]
+# print(f"{second} {first}")
+# print(s.startswith("I am", 14))
+# print(s.index("I am"))
+# print(s.endswith("on."))
+
+
+# print('123'.isdigit())  # только числа
+# print('qqwewe'.isalpha())  # только буквы
+#
+# print('Abc123'.isalnum())  # только буквы или цифры
+#
+# print('abc'.islower())  # только буквы в нижнем регистре и другие символы
+# print('ФBC01123'.isupper())  # только буквы в верхнем регистре и другие символы
+
+# n = input("Введите число: ")
+# if n.isdigit():
+#     n = int(n)
+#     print(n * 2)
+
+
+# print('py'.center(10))
+# print(' py '.center(11, "-"))
+
+
+# print('   py   '.lstrip())
+# print('   py   '.rstrip())
+# print('   py   '.strip())
+
+# print('https://www.pythons.org'.strip('/:pths.org'))
+# print('https://www.pythons.org'.lstrip('/:pths').rstrip('.org'))
+
+# str1 = "Я изучаю Nython. Мне нравится Nython. Nython очень интересный язык программирования."
+# print(str1.replace("N", "P"))
+# print(str1.replace("Nython", "Python"))
+
+# s = "-"
+# seq = ("a", "b", "c")
+# print(s.join(seq))
+#
+# print("..".join(['1', '99']))
+#
+# print(":".join("Hello"))
+
+# print("Строка разделенная пробелами".split())  # ['Строка', 'разделенная', 'пробелами']
+# print('www.python.org.ru'.split(".", 2))
+# print('www.python.org.ru'.rsplit(".", 2))
+
+# a = input("-> ").split()
+# b = list(map(int, a))
+# print(b)
