@@ -2658,7 +2658,7 @@
 #
 # print(validate_login("Python-master"))
 
-import re
+# import re
 
 # print(re.findall(r"\w+", "12 + й"))
 # print(re.findall(r"\w+", "12 + й", flags=re.ASCII))
@@ -3006,7 +3006,8 @@ import re
 # print(longest_words('test.txt'))
 
 
-# text = "Строка №1\nСтрока №2\nСтрока №3\nСтрока №4\nСтрока №5\nСтрока №6\nСтрока №7\nСтрока №8\nСтрока №9\nСтрока №10\n"
+# text = "Строка №1\nСтрока №2\nСтрока №3\nСтрока №4\nСтрока №5\
+# nСтрока №6\nСтрока №7\nСтрока №8\nСтрока №9\nСтрока №10\n"
 #
 # with open('one.txt', 'w') as f:
 #     f.write(text)
@@ -3020,8 +3021,8 @@ import re
 
 # Модуль OS, OS.PATH
 
-import os
-import time
+# import os
+# import time
 
 
 # import os.path
@@ -3065,9 +3066,11 @@ import time
 #
 # remove_empty_dirs("nested1")
 
-# print(os.path.split(r"C:\Users\user\OneDrive\Документы\Курс Python317\Python317\nested1\nested2\nested4\test2.txt"))  # [1] - test2.txt
+# print(os.path.split(r"C:\Users\user\OneDrive\Документы\Курс Python317\
+# Python317\nested1\nested2\nested4\test2.txt"))  # [1] - test2.txt
 #
-# print(os.path.join(r'C:\Users\user\OneDrive\Документы\Курс Python317', 'Python317', 'nested1', 'nested2', 'test2.txt'))
+# print(os.path.join(r'C:\Users\user\OneDrive\Документы\
+# Курс Python317', 'Python317', 'nested1', 'nested2', 'test2.txt'))
 
 # dirs = [r'Work\F1', r'Work\F2\F21']
 # for d in dirs:
@@ -3241,39 +3244,258 @@ import time
 # print(h1.get_birthday())
 # h1.print_info()
 
-class Person:
-    skill = 10  # статическое свойство
-    count = 0
+# class Person:
+#     skill = 10  # статическое свойство
+#     count = 0
+#
+#     def __init__(self, name, surname):  # инициализатор
+#         self.name = name  # динамическое свойство
+#         self.surname = surname
+#         print("Инициализатор")
+#         Person.count += 1
+#
+#     def __del__(self):  # финализатор (деструктор)
+#         print("Удаление экземпляра:", self.__class__.__name__)
+#
+#     def print_info(self):
+#         print("Данные сотрудника:", self.name, self.surname)
+#
+#     def add_skill(self, k):
+#         self.skill += k
+#         print("Квалификация сотрудника:", self.skill, end="\n\n")
+#
+#
+# p1 = Person("Виктор", "Резник")
+# p1.print_info()
+# p1.add_skill(3)
+# # del p1
+# # p1 = 5
+#
+#
+# p2 = Person("Анна", "Долгих")
+# p2.print_info()
+# p2.add_skill(2)
+#
+# p3 = Person("Анна", "Долгих")
+# print(p1.count)
+# print(p2.count)
+# print(Person.count)
 
-    def __init__(self, name, surname):  # инициализатор
-        self.name = name  # динамическое свойство
-        self.surname = surname
-        print("Инициализатор")
-        Person.count += 1
 
-    def __del__(self):  # финализатор (деструктор)
-        print("Удаление экземпляра:", self.__class__.__name__)
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = self.__y = 0
+#         if Point.__check_value(x) and Point.__check_value(y):
+#             self.__x = x
+#             self.__y = y
+#
+#     def __check_value(a):
+#         if isinstance(a, int) or isinstance(a, float):
+#             return True
+#         return False
+#
+#     def set_coord(self, x, y):
+#         if Point.__check_value(x) and Point.__check_value(y):
+#             self.__x = x
+#             self.__y = y
+#         else:
+#             print("Координаты должны быть числами")
+#
+#     def get_coord(self):
+#         return self.__x, self.__y
+#
+#     def set_x(self, x):
+#         if Point.__check_value(x):
+#             self.__x = x
+#         else:
+#             print("Координата X должна быть числом")
+#
+#     def set_y(self, y):
+#         if Point.__check_value(y):
+#             self.__y = y
+#         else:
+#             print("Координата Y должна быть числом")
+#
+#     def get_x(self):
+#         return self.__x
+#
+#     def get_y(self):
+#         return self.__y
+#
+#
+# p1 = Point(5, 10)
+# print(p1.get_coord())
+# # p1.set_coord(100.5, 200.3)
+# # print(p1.get_coord())
+# p1.set_x(50)
+# print(p1.get_x())
+# p1.set_y(30)
+# print(p1.get_y())
+# p1._Point__x = 111
+# print(p1.__dict__)
+# print(p1._Point__x)
 
-    def print_info(self):
-        print("Данные сотрудника:", self.name, self.surname)
-
-    def add_skill(self, k):
-        self.skill += k
-        print("Квалификация сотрудника:", self.skill, end="\n\n")
+# from math import sqrt
 
 
-p1 = Person("Виктор", "Резник")
-p1.print_info()
-p1.add_skill(3)
-# del p1
-# p1 = 5
+# class Rectangle:
+#     __slots__ = ["__length", "__width", "x"]
+#
+#     def __init__(self, length, width):
+#         self.__length = length
+#         self.__width = width
+#
+#     def __check_value(a):
+#         if isinstance(a, int) or isinstance(a, float):
+#             return True
+#         return False
+#
+#     def set_length(self, length):
+#         if Rectangle.__check_value(length):
+#             self.__length = length
+#
+#     def set_width(self, width):
+#         if Rectangle.__check_value(width):
+#             self.__width = width
+#
+#     def get_length(self):
+#         return self.__length
+#
+#     def get_width(self):
+#         return self.__width
+#
+#     def get_area(self):
+#         return self.__length * self.__width
+#
+#     def get_perimeter(self):
+#         return 2 * (self.__length + self.__width)
+#
+#     def get_hypotenuse(self):
+#         return round(sqrt(self.__length ** 2 + self.__width ** 2), 2)
+#
+#     def get_draw(self):
+#         print(("*" * self.__width + "\n") * self.__length)
+#
+#
+# rect = Rectangle(4, 12)
+# rect.set_length(3)
+# rect.set_width(9)
+# print("Длина прямоугольника", rect.get_length())
+# print("Ширина прямоугольника:", rect.get_width())
+# print("Площадь прямоугольника:", rect.get_area())
+# print("Периметр прямоугольника", rect.get_perimeter())
+# print("Гипотенуза прямоугольника", rect.get_hypotenuse())
+# rect.get_draw()
+# rect.x = 20
+# print(rect.x)
+# print(rect.__dict__)
 
 
-p2 = Person("Анна", "Долгих")
-p2.print_info()
-p2.add_skill(2)
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def __set_x(self, x):
+#         self.__x = x
+#         print("Сеттер")
+#
+#     def __get_x(self):
+#         print("Геттер")
+#         return self.__x
+#
+#     def __del_x(self):
+#         print("Удаление свойства")
+#         del self.__x
+#
+#     x = property(__get_x, __set_x, __del_x)
+#
+#
+# p1 = Point(5, 10)
+# p1.x = 100
+# print(p1.x)
+# del p1.x
+# print(p1.__dict__)
 
-p3 = Person("Анна", "Долгих")
-print(p1.count)
-print(p2.count)
-print(Person.count)
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def __check_value(a):
+#         if isinstance(a, int) or isinstance(a, float):
+#             return True
+#         return False
+#
+#     @property
+#     def x(self):
+#         return self.__x
+#
+#     @x.deleter
+#     def x(self):
+#         del self.__x
+#
+#     @x.setter
+#     def x(self, x):
+#         if Point.__check_value(x):
+#             self.__x = x
+#
+#
+#     # x = property(__get_x, __set_x, __del_x)
+#
+#
+# p1 = Point(5, 10)
+# p1.x = 100.2
+# print(p1.x)
+# # del p1.x
+# print(p1.__dict__)
+
+
+#  Создать класс для преобразования килограмм в фунты
+# class KgToPounds:
+#     def __init__(self, kg):
+#         self.__kg = kg
+#
+#     @property
+#     def kg(self):
+#         return self.__kg
+#
+#     @kg.setter
+#     def kg(self, new_kg):
+#         if isinstance(new_kg, (int, float)):
+#             self.__kg = new_kg
+#         else:
+#             print("Килограммы задаются только числами")
+#
+#     def to_pound(self):
+#         return self.__kg * 2.205
+#
+#
+# weight = KgToPounds(12)
+# print(weight.kg, "кг =>", weight.to_pound(), "фунтов")
+# weight.kg = 41
+# print(weight.kg, "кг =>", weight.to_pound(), "фунтов")
+# weight.kg = "два"
+
+
+class Point:
+    __count = 0
+
+    def __init__(self, x=0, y=0):
+        self.__x = x
+        self.__y = y
+        Point.__count += 1
+
+    @staticmethod
+    def get_count():
+        return Point.__count
+
+
+p1 = Point()
+p2 = Point()
+p3 = Point()
+p4 = Point()
+p5 = Point()
+
+print(Point.get_count())
