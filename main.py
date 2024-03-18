@@ -3282,6 +3282,43 @@
 # print(Person.count)
 
 
+# class Robot:
+#     k = 0
+#
+#     def __init__(self, name):
+#         self.name = name
+#         print("Инициализация робота:", self.name)
+#         Robot.k += 1
+#
+#     def __del__(self):
+#         print(self.name, "выключается!")
+#         Robot.k -= 1
+#         if Robot.k == 0:
+#             print(self.name, "был последним")
+#         else:
+#             print("Работающих роботов осталось:", Robot.k)
+#
+#     def say_hi(self):
+#         print("Приветствую! Меня зовут:", self.name)
+#
+#
+# droid1 = Robot('R2-D2')
+# droid1.say_hi()
+# print("Численность роботов:", Robot.k)
+# droid2 = Robot('C-3PO')
+# droid2.say_hi()
+# print("Численность роботов:", Robot.k)
+# droid3 = Robot('P-2CO')
+# droid3.say_hi()
+# print("Численность роботов:", Robot.k)
+# print("\nЗдесь роботы могут проделать какую-то работу\n")
+# print("Роботы закончили свою работу. Давайте их выключим")
+# del droid1
+# del droid2
+# del droid3
+# print("Численность роботов:", Robot.k)
+
+
 # class Point:
 #     def __init__(self, x, y):
 #         self.__x = self.__y = 0
@@ -3479,23 +3516,23 @@
 # weight.kg = "два"
 
 
-class Point:
-    __count = 0
-
-    def __init__(self, x=0, y=0):
-        self.__x = x
-        self.__y = y
-        Point.__count += 1
-
-    @staticmethod
-    def get_count():
-        return Point.__count
-
-
-p1 = Point()
-p2 = Point()
-p3 = Point()
-p4 = Point()
-p5 = Point()
-
-print(Point.get_count())
+# class Point:
+#     __count = 0
+#
+#     def __init__(self, x=0, y=0):
+#         self.__x = x
+#         self.__y = y
+#         Point.__count += 1
+#
+#     @staticmethod
+#     def get_count():
+#         return Point.__count
+#
+#
+# p1 = Point()
+# p2 = Point()
+# p3 = Point()
+# p4 = Point()
+# p5 = Point()
+#
+# print(Point.get_count())
