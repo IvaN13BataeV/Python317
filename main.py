@@ -3803,7 +3803,7 @@ import re
 # p1 = UserDate("Волков2 Игорь Николаевич", 24, "1234 567890", 80.8)
 #
 # # p1.fio = "Соболев Игорь Николаевич"
-# print(p1.fio)
+# print(p1.__dict__)
 
 
 # class Point:  # (object)
@@ -3840,24 +3840,22 @@ import re
 #         print(f"Рисование линии: {self._sp}, {self._ep}, {self._color}, {self.get_width()}")
 #
 #
-# # class Rect(Prop):
-# #     def draw_rect(self):  # -> None
-# #         print(f"Рисование прямоугольника: {self._sp}, {self._ep}, {self._color}, {self._width}")
-# #
-# #
-# # line = Line(Point(1, 2), Point(10, 20), "yellow", 5)
-# # print(line.color)
+# class Rect(Prop):
+#     def draw_rect(self):  # -> None
+#         print(f"Рисование прямоугольника: {self._sp}, {self._ep}, {self._color}, {self._width}")
 #
 #
 # line = Line(Point(1, 2), Point(10, 20), "yellow", 5)
+# # print(line._color)
+#
 # line.draw_line()
-# rect = Rect(Point(30, 40), Point(70, 80))
-# rect.draw_rect()
-# print(issubclass(Line, Prop))
-# print(issubclass(Line, Rect))
-# print(Point.__dict__)
-# print(Line.__dict__)
-# print(Prop.__dict__)
+# # rect = Rect(Point(30, 40), Point(70, 80))
+# # rect.draw_rect()
+# # print(issubclass(Line, Prop))
+# # print(issubclass(Line, Rect))
+# # print(Point.__dict__)
+# # print(Line.__dict__)
+# # print(Prop.__dict__)
 
 
 # class Figure:
@@ -3894,19 +3892,61 @@ import re
 #             raise ValueError("Высота должна быть положительным числом")
 #
 #     def area(self):
-#         print(f"Площадь {self.color} ")
+#         print(f"Площадь {self.color} прямоугольника:", end=" ")
+#         return self.__width * self.__height
 #
 #
 # rect = Rectangle(10, 20, "green")
 # print(rect.color)
+# # rect.width = 50
+# # print(rect.width)
+# print(rect.area())
 
+# class Rect:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+#
+#     def show_rect(self):
+#         print(f"Прямоугольник: \nШирина: {self.width}\nВысота: {self.height}")
+#
+#
+# class RectFon(Rect):
+#     def __init__(self,width, height, background):
+#         super().__init__(width, height)
+#         self.fon = background
+#
+#     def show_rect(self):
+#         super().show_rect()
+#         print("Фон:", self.fon)
+#
+#
+# class RectBorder(Rect):
+#     def __init__(self, width, height, px, solid, red):
+#         super().__init__(width, height)
+#         self.px = px
+#         self.solid = solid
+#         self.red = red
+#
+#     def show_rect(self):
+#         super().show_rect()
+#         print(f"Рамка: {self.px} {self.solid} {self.red}")
+#
+#
+# shape1 = RectFon(400, 200, "yellow")
+# shape1.show_rect()
+# print()
+# shape2 = RectBorder(600, 300, "1px", "solid", "red")
+# shape2.show_rect()
 
-# class Vector(list):
+# class Vector(set):
 #     def __str__(self):
-#         return " ".join(map(str, self))
+#         # return " ".join(map(str, self))
+#         return " ".join(self)
 #
 #
-# v = Vector([1, 2, 3])
+# # v = Vector({1, 2, 3})
+# v = Vector({"b", "a", "c"})
 # print(v)
 
 
@@ -3947,6 +3987,6 @@ import re
 # line.draw_line()
 # line.set_coord(Point(-10, -20))
 # line.draw_line()
-#
+# #
 # line.set_coord(ep=Point(500, 700))
 # line.draw_line()
