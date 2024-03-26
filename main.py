@@ -11,7 +11,7 @@
 # a = b
 # print(a, id(a))
 # print(b, id(b))
-import re
+# import re
 
 
 # a = b = c = 3
@@ -4226,7 +4226,7 @@ import re
 #
 # out = MyOuter('внешний')
 # print(out.name)
-# inner = out.MyInner('внутренний')
+# inner = out.MyInner('внутренний', out)
 # print(inner.inner_name)
 # inner.inner_method()
 
@@ -4259,34 +4259,34 @@ import re
 # outer.show()
 # g = outer.lg
 # g.display()
-# g2 = outer.lg
+# g2 = outer.dg
 # g2.display()
 # print(g2.name)
 
-class Computer:
-    def __init__(self):
-        self.name = "PC001"
-        # self.os = self.OS()
-        # self.cpu = self.CPU()
-
-    class OS:
-        def system(self):
-            return "Windows 10"
-
-    class CPU:
-        def make(self):
-            return "Intel"
-
-        def model(self):
-            return "Core-i7"
-
-
-comp = Computer()
-# my_os = comp.os
-# my_cpu = comp.cpu
-my_os = Computer().OS()
-my_cpu = Computer().CPU()
-print(comp.name)
-print(my_os.system())
-print(my_cpu.make())
-print(my_cpu.model())
+# class Computer:
+#     def __init__(self):
+#         self.name = "PC001"
+#         # self.os = self.OS()
+#         # self.cpu = self.CPU()
+#
+#     class OS:
+#         def system(self):
+#             return "Windows 10"
+#
+#     class CPU:
+#         def make(self):
+#             return "Intel"
+#
+#         def model(self):
+#             return "Core-i7"
+#
+#
+# comp = Computer()
+# # my_os = comp.os
+# # my_cpu = comp.cpu
+# my_os = Computer().OS()
+# my_cpu = Computer().CPU()
+# print(comp.name)
+# print(my_os.system())
+# print(my_cpu.make())
+# print(my_cpu.model())
