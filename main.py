@@ -5198,8 +5198,8 @@
 #
 # p = Person("Иван", "Петров")
 # p.surname = "Иванов"
-# # print(p.name)
-# # print(p.surname)
+# print(p.name)
+# print(p.surname)
 
 # class NonNegative:
 #     def __set_name__(self, owner, name):
