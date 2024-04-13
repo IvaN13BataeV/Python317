@@ -12,7 +12,7 @@
 # print(a, id(a))
 # print(b, id(b))
 # import re
-
+import json
 
 # a = b = c = 3
 # print(a, b, c)
@@ -5297,66 +5297,66 @@
 # e_car.description_battery()
 
 
-# class Employee:
-#     def __init__(self, kod, name):
-#         self.id = kod
-#         self.name = name
-#
-#
-# class SalaryEmployee(Employee):
-#     """Административные работники, имеют фиксированную зарплату"""
-#
-#     def __init__(self, kod, name, weekly_salary):
-#         super().__init__(kod, name)
-#         self.weekly_salary = weekly_salary
-#
-#     def calculate_payroll(self):
-#         return self.weekly_salary
-#
-#
-# class HourlyEmployee(Employee):
-#     """Сотрудники с почасовой оплатой"""
-#
-#     def __init__(self, kod, name, hours_worked, house_rate):
-#         super().__init__(kod, name)
-#         self.hours_worked = hours_worked
-#         self.house_rate = house_rate
-#
-#     def calculate_payroll(self):
-#         return self.hours_worked * self.house_rate
-#
-#
-# class CommissionEmployee(SalaryEmployee):
-#     """Торговые представители, фиксированная зарплата + комиссия"""
-#
-#     def __init__(self, kod, name, weekly_salary, commission):
-#         super().__init__(kod, name, weekly_salary)
-#         self.commission = commission
-#
-#     def calculate_payroll(self):
-#         fixed = super().calculate_payroll()
-#         return fixed + self.commission
-#
-#
-# class PayrollSystem:
-#     def calculate(self, employees):
-#         print("Расчет заработной платы")
-#         print("=" * 50)
-#         for employee in employees:
-#             print(f"Заработная плата: {employee.id} - {employee.name}")
-#             print(f"- Проверить сумму: {employee.calculate_payroll()}")
-#             print()
-#
-#
-# salary_employee = SalaryEmployee(1, "Валерий Задорожный", 1500)
-# hourly_employee = HourlyEmployee(2, "Илья Кромин", 40, 15)
-# commission_employee = CommissionEmployee(3, "Николай Хорольский", 1000, 250)
-# payroll_system = PayrollSystem()
-# payroll_system.calculate([
-#     salary_employee,
-#     hourly_employee,
-#     commission_employee
-# ])
+class Employee:
+    def __init__(self, kod, name):
+        self.id = kod
+        self.name = name
+
+
+class SalaryEmployee(Employee):
+    """Административные работники, имеют фиксированную зарплату"""
+
+    def __init__(self, kod, name, weekly_salary):
+        super().__init__(kod, name)
+        self.weekly_salary = weekly_salary
+
+    def calculate_payroll(self):
+        return self.weekly_salary
+
+
+class HourlyEmployee(Employee):
+    """Сотрудники с почасовой оплатой"""
+
+    def __init__(self, kod, name, hours_worked, house_rate):
+        super().__init__(kod, name)
+        self.hours_worked = hours_worked
+        self.house_rate = house_rate
+
+    def calculate_payroll(self):
+        return self.hours_worked * self.house_rate
+
+
+class CommissionEmployee(SalaryEmployee):
+    """Торговые представители, фиксированная зарплата + комиссия"""
+
+    def __init__(self, kod, name, weekly_salary, commission):
+        super().__init__(kod, name, weekly_salary)
+        self.commission = commission
+
+    def calculate_payroll(self):
+        fixed = super().calculate_payroll()
+        return fixed + self.commission
+
+
+class PayrollSystem:
+    def calculate(self, employees):
+        print("Расчет заработной платы")
+        print("=" * 50)
+        for employee in employees:
+            print(f"Заработная плата: {employee.id} - {employee.name}")
+            print(f"- Проверить сумму: {employee.calculate_payroll()}")
+            print()
+
+
+salary_employee = SalaryEmployee(1, "Валерий Задорожный", 1500)
+hourly_employee = HourlyEmployee(2, "Илья Кромин", 40, 15)
+commission_employee = CommissionEmployee(3, "Николай Хорольский", 1000, 250)
+payroll_system = PayrollSystem()
+payroll_system.calculate([
+    salary_employee,
+    hourly_employee,
+    commission_employee
+])
 
 
 # Упаковка данных
@@ -5405,3 +5405,116 @@
 #
 # obj2 = pickle.loads(my_obj)
 # print(obj2)
+
+# import json
+# from random import choice
+#
+#
+# def gen_person():
+#     name = ''
+#     tel = ''
+#
+#     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+#     nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+#
+#     while len(name) != 7:
+#         name += choice(letters)
+#
+#     while len(tel) != 10:
+#         tel += choice(nums)
+#
+#     person = {
+#         'name': name,
+#         'tel': tel
+#     }
+#
+#     return person
+#
+#
+# def write_json(person_dict):
+#     try:
+#         data = json.load(open('persons.json'))
+#     except FileNotFoundError:
+#         data = []
+#
+#     data.append(person_dict)
+#     with open("persons.json", "w") as f:
+#         json.dump(data, f, indent=2)
+#
+#
+# for i in range(5):
+#     write_json(gen_person())
+# import json
+#
+#
+# class Student:
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks
+#
+#     def __str__(self):
+#         # a = ''
+#         # for i in self.marks:
+#         #     a += str(i) + ", "
+#         # return f"Студент: {self.name} => {a[:-2]}"
+#         a = ", ".join(map(str, self.marks))
+#         return f"Студент: {self.name} => {a}"
+#
+#     def add_mark(self, mark):
+#         self.marks.append(mark)
+#
+#     def delete_mark(self, index):
+#         self.marks.pop(index)
+#
+#     def edit_mark(self, index, new_mark):
+#         self.marks[index] = new_mark
+#
+#     def average_mark(self):
+#         return round(sum(self.marks) / len(self.marks), 2)
+#
+#     def get_file_name(self):
+#         return self.name.lower() + ".json"
+#
+#     def dump_to_json(self):
+#         data = {"name": self.name, "marks": self.marks}
+#         with open(self.get_file_name(), "w") as f:
+#             json.dump(data, f)
+#
+#     def load_from_file(self):
+#         with open(self.get_file_name(), "r") as f:
+#             print(json.load(f))
+#
+#
+# class Group:
+#     def __init__(self, students):
+#         self.students = students
+#
+#     def __str__(self):
+#         a = "\n".join(map(str, self.students))
+#         return f"{a}"
+#
+#     def add_student(self, student):
+
+
+# st1 = Student('Bodnya', [5, 4, 3, 4, 5, 3])
+# print(st1)
+# st1.add_mark(4)
+# print(st1)
+# st1.delete_mark(2)
+# print(st1)
+# st1.edit_mark(2, 5)
+# print(st1)
+# print(st1.average_mark())
+# st1.dump_to_json()
+# st2 = Student('Nikolaenko', [2, 3, 5, 4, 2])
+# st2.dump_to_json()
+# st2.load_from_file()
+# st2.add_mark(5)
+# print(st2)
+# st2.dump_to_json()
+# st2.load_from_file()
+
+# st1 = Student('Bodnya', [5, 4, 3, 4, 5, 3])
+# st2 = Student('Nikolaenko', [2, 3, 5, 4, 2])
+# st3 = Student('Birukov', [3, 5, 3, 2, 5, 4])
+# sts1 = [st1, st2]
