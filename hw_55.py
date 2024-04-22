@@ -2,7 +2,7 @@ import csv
 import json
 import requests
 
-# записываем данные из json формата в список
+# записываем данные из json формата в список словарей
 todos = json.loads(requests.get("https://jsonplaceholder.typicode.com/todos").text)
 
 with open("todos.csv", 'w') as c:

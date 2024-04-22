@@ -5883,3 +5883,38 @@
 # row = soup.find("div", string="Alena").find_parent(class_="row")
 # row = soup.find("div", id="whois3").find_next_sibling()
 # print(row)
+
+# def get_copywriter(tag):
+#     whois = tag.find("div", class_="whois")
+#     if "Copywriter" in whois:
+#         return tag
+#     return None
+#
+#
+# f = open('index.html').read()
+# soup = BeautifulSoup(f, "html.parser")
+# copywriter = []
+# row = soup.find_all("div", class_="row")
+# for i in row:
+#     cw = get_copywriter(i)
+#     if cw:
+#         copywriter.append(cw)
+#
+# print(copywriter)
+
+# import re
+#
+#
+# def get_salary(s):
+#     pattern = r"\d+"
+#     # res = re.findall(pattern, s)[0]
+#     res = re.search(pattern, s).group()
+#     print(res)
+#
+#
+# f = open('index.html').read()
+# soup = BeautifulSoup(f, "html.parser")
+# salary = soup.find_all("div", {"data-set": "salary"})
+#
+# for i in salary:
+#     get_salary(i.text)
