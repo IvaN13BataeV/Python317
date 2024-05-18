@@ -1,0 +1,17 @@
+1.
+SELECT COUNT(c.Client) as "Кол-во клиентов"
+FROM Client c
+
+2.
+SELECT COUNT(s.Seller) as "Кол-во посредников"
+FROM Seller s
+WHERE s.Status LIKE "посредник"
+
+3.
+SELECT ROUND(AVG(CostUnit*Count), 2) as "Средняя сумма сделки"
+FROM ClientGoods
+
+7.
+SELECT SUM(cg.CostUnit*Count) as "Сумма проданного товара"
+FROM ClientGoods cg, Client c
+WHERE c.INNClient=cg.INNClient and c.Status="магазин"
