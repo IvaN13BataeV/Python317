@@ -1,0 +1,38 @@
+3.Соедините вместе все таблицы с помощью внешнего объединения.
+SELECT *
+FROM Zakaz z JOIN Klient k JOIN Prodaves p
+ON z.ID_KL=k.ID_KL AND p.ID_Pr=k.ID_Pr
+
+4.С помощью объединения вывести данные о скидках клиента для каждого продавца
+SELECT p.Name_Pr Продавец, k.Discoun Скидка
+FROM Prodaves p JOIN Klient k
+ON p.ID_Pr=k.ID_Pr
+
+5.Напишите запрос, который выведет все города, в которых живут продавцы и заказчики.
+SELECT City_Pr Город 
+FROM Prodaves 
+UNION
+SELECT City_KL
+FROM Klient 
+
+6.С помощью объединения вывести все данные о заказчиках и  заказах, даже если заказчик не сделал ни одного заказа за указанный период.
+SELECT *
+FROM Klient k JOIN Zakaz z
+ON k.ID_KL=z.ID_KL
+
+7.Составьте запроса для вывода имен и кодов всех продавцов, в чьих городах есть покупатели, которых они не обслуживают. С помощью оператора в подзапросе.
+SELECT p.Name_Pr, p.ID_Pr
+FROM Prodaves p
+WHERE EXISTS
+    (SELECT k.ID_Pr
+    FROM Klient k
+    WHERE p.ID_Pr!=k.ID_Pr and p.City_Pr=k.City_KL)
+
+8.Напишите запрос, который выведет все города и имена продавцов и заказчиков, которые живут в Лондоне.
+SELECT p.City_Pr Город, p.Name_Pr Имя
+FROM Prodaves p 
+WHERE p.City_Pr LIKE "London"
+UNION
+SELECT k.City_KL, k.Name_KL
+FROM Klient k
+WHERE k.City_KL LIKE "London";
