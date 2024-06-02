@@ -6357,15 +6357,15 @@
 #     write_ava("out.png", img)
 
 # import sqlite3
-#
+
 # with sqlite3.connect("car.db") as con:
 #     cur = con.cursor()
 #
 #     with open("sql_dump.sql", "w") as f:
 #         for sql in con.iterdump():
 #             f.write(sql)
-#
-#
+
+
 # with sqlite3.connect("car_new.db") as con:
 #     cur = con.cursor()
 #
@@ -6375,7 +6375,7 @@
 
 
 from jinja2 import Template
-#
+
 # name = "Игорь"
 # age = 28
 #
