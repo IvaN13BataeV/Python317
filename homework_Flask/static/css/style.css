@@ -1,0 +1,35 @@
+body{
+    background: rgba(40, 90, 254, 0.937);
+    margin: 0;
+    padding: 0;
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background: rgb(0, 191, 255);
+    padding: 20px;
+    margin-top: 0;
+    color: #AEFFC5;
+    border: 1px blue solid;
+}
+.content{
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.content>h1{
+    color: #d7cd0d;
+}
+.content h3{
+    color:#de8a3a
+}
+.content p{
+    color:orange
+}
+div{
+    color: aliceblue;
+    border: 2px blueviolet solid;
+    padding: 20px;
+}
