@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div>
+        <h1>Правила генерации паролей</h1>
+        <p>Выберите нужное количество символов в выпадающем списке (12 по умолчанию)
+        </p>
+        <p>Пометьте галочкой условия генерации символов пароля</p>
+        <p>Нажмите кнопку <b><i>"Сгенерировать пароль"</i></b></p>
+        <p><a href="{% url 'home' %}">Вернуться на главную</a></p>
+    </div>
+</body>
+</html>
