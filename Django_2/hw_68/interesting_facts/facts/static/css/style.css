@@ -10,11 +10,13 @@ body{
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .block{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     margin-bottom: 60px;
 }
 .text{
@@ -27,9 +29,10 @@ body{
     max-width: 360px;
 }
 .element{
+    text-align: justify;
     background: rgb(25, 172, 250);
     border: 6px solid #0cb823;
-    margin: 20px 0;
+    margin: 20px 7px;
 }
 .content h1{
     color: brown;
@@ -49,5 +52,10 @@ body{
 .img img{
     border: 6px solid #0c05bc;
 }
-
+.detail {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 

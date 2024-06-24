@@ -15,15 +15,11 @@
             <img src="{{ project.image.url }}" alt="">
         </div>
         <div class="text">
-            <h2><a href="{{ project.url }}" target="_blank">{{ project.title }}</a></h2>
-            <p>{{ project.description }}</p>
+            <h2><a href="{% url 'detail' project.id %}">{{ project.title }}</a></h2>
+            <p>{{ project.description|truncatechars:500 }}</p>
         </div>
     </div>
     {% endfor %}
 </div>
-
-
-
-
 
 {% endblock %}
