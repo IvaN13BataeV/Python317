@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Факты о России</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="menu">
+    <div class="wrap">
+        <ul>
+            {% if user.is_authenticated %}
+                <li class="logo">Пользователь: {{ user.username }}</li>
+                <li><a href="{% url 'index' %}">Статьи</a></li>
+                <li><a href="{% url 'add' %}">Добавить статью</a></li>
+                <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button class="top">Выйти</button>
+                </form>
+            {% else %}
+                <li><a href="{% url 'signup' %}">Зарегистрироваться</a></li>
+                <li><a href="{% url 'login' %}">Войти</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="wrap">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>
