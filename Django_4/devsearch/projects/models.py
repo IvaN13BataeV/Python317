@@ -1,4 +1,5 @@
 from django.db import models
+from users.models import Profile
 
 
 class Tag(models.Model):
@@ -10,6 +11,7 @@ class Tag(models.Model):
 
 
 class Project(models.Model):
+    owner = models.ForeignKey(Profile, on_delete=models.SET_NULL, blank=True, null=True)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     featured_image = models.ImageField(blank=True, default="default.jpg", upload_to="projects/%Y/%m/%d/")
