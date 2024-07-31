@@ -5,8 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Django_2/hw_68/interesting_facts" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Django_3/todos" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Django_2/hw_68,69/interesting_facts" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/.venv" />
-      <excludeFolder url="file://$MODULE_DIR$/Diplom Notio/.venv" />
+      <sourceFolder url="file://$MODULE_DIR$/Diplom Notio/notio" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Django_4/devsearch" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/Diplom Notio/Diplom/.venv" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.12" jdkType="Python SDK" />
