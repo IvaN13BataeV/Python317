@@ -31,8 +31,6 @@ def paginate_profiles(request, pr, results):
     return custom_range, pr
 
 
-
-
 def search_profiles(request):
     search_query = ""
 
